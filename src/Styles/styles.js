@@ -244,6 +244,15 @@ export const InputUser = styled.input`
     padding: 8px;
 `
 
+//Criando um botão que vou colocar o link para seguir o atendimento
+export const ButtonLink = styled.button`
+    font-family: Arial, Helvetica, sans-serif;
+    border:3px solid #008080;
+    background-color: white;
+    color:#008080;
+    padding: 15px 32px;
+    text-align: center;
+`
 
 // PAGINA ENDEREÇO
 

@@ -15,5 +15,4 @@ function Home(){
     )
 }
 
-//Exportando minha function para ser utilizado no "App.jxs"
 export default Home;

@@ -4,7 +4,7 @@ import { useState } from "react";
 // Importando o axios para consumir a API
 import axios from 'axios';
 //importando os esilos
-import { Section,SectionCepForm,InformacoesCep,BtnAtendimento,Paragrafo,InputUser }  from "../Styles/styles";
+import { Section,SectionCepForm,InformacoesCep,BtnAtendimento,Paragrafo,InputUser,ButtonLink,LinkC }  from "../Styles/styles";
 
 function Cep() {
 
@@ -71,6 +71,7 @@ function Cep() {
                             <Paragrafo>Bairro: {data.bairro}</Paragrafo>
                             <Paragrafo>UF: {data.uf}</Paragrafo>
                             <Paragrafo>DDD: {data.ddd}</Paragrafo>
+                            <ButtonLink><LinkC href="/Endereco">Continuar</LinkC></ButtonLink>
                     </InformacoesCep>
                 )
             }
