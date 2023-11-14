@@ -13,6 +13,7 @@ function FormularioVeiculo(){
     const [veiculos, setVeiculos] = useState([]);
     const [placaPesquisa, setPlacaPesquisa] = useState('');
     const [veiculoEncontrado, setVeiculoEncontrado] = useState(null);
+    const [placaInvalida, setPlacaInvalida] = useState(false);
   
     useEffect(() => {
       const fetchData = async () => {
@@ -34,13 +35,20 @@ function FormularioVeiculo(){
         // Realiza a pesquisa na lista de veiculos numero da placa
         const placaPesquisa1 = veiculos.find((veiculo) => veiculo.placa === placaPesquisa);
     
-        // Atualiza o estado com o cliente encontrado
-        setVeiculoEncontrado(placaPesquisa1);
+      if(placaPesquisa1){
+        setVeiculoEncontrado(placaPesquisa1)
+        setPlacaInvalida(false)
+        console.log('VeiculoEncontrado:', placaPesquisa);
+      }else{
+        setVeiculoEncontrado(null)
+        setPlacaInvalida(true)
+        console.log("Placa Invalida")
+      }
     }
   
     return (
       <Section>
-        <TituloD>Confirmação Identidade</TituloD>
+        <TituloD>Confirmação do Veículo</TituloD>
   
         <FormularioSection>
           {/* Adiciona um campo de entrada e um botão para pesquisa */}
@@ -52,7 +60,8 @@ function FormularioVeiculo(){
           />
           <BtnAtendimento onClick={handlePesquisar}>Pesquisar</BtnAtendimento>
         </FormularioSection>
-  
+
+        
         {veiculoEncontrado &&(
           <SectionCepForm>
             <Paragrafo>Placa: {veiculoEncontrado.placa}</Paragrafo>
@@ -60,12 +69,22 @@ function FormularioVeiculo(){
             <Paragrafo>Renavam: {veiculoEncontrado.renavam}</Paragrafo>
             <ButtonLink><LinkC href="/Endereco">Continuar</LinkC></ButtonLink>
           </SectionCepForm>
-        )}
+          
+        )};
+       
+        
+        {placaInvalida &&(
+          <SectionCepForm>
+            <Paragrafo>Placa Invalida</Paragrafo>
+          </SectionCepForm>
+        )};
+  
+        
         
       </Section>
     );
 }
 
 
-//Exportando meu formulario para ser usado na pagina ""
+//Exportando meu formulario 
 export default FormularioVeiculo

@@ -289,10 +289,47 @@ export const SectionImagem3 = styled.section`
 
 //Backgroun image armazenado no container div
 export const ContainerImg3 = styled.div`
-    background-image: url("https://i.pinimg.com/originals/ef/75/cd/ef75cd14cd307a2fc0eaf80fdac75b80.png");
+    background-image: url("https://i.pinimg.com/originals/ef/75/cd/ef75cd14cd307a2fc0eaf80fdac75b80.png");    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    height: 120px;
+
+    
+`
+
+
+//Estilos para a Pagina de Confirmaão de veiculo
+
+
+//Div que vai receber o bacgroundimage
+export const DivImg3 = styled.div`
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1h_C0Jx95qIJDN3cYml-dRPuc6sZ32G1j4w&usqp=CAU");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100px;
-    height: 120px;
+    height: 100px;
+`
+
+//Pagina encerramento
+
+export const DivImg4 = styled.div`
+    background-image: url("https://patriciacarneiro.adv.br/wp-content/uploads/2022/03/capa-perfil-instagram.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 45%;
+    width: 200px;
+    height: 250px;
+
+    @media (min-width: 1000px){
+        background-image: url("https://patriciacarneiro.adv.br/wp-content/uploads/2022/03/capa-perfil-instagram.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 10%;
+    width: 200px;
+    height: 250px;
+    }
 `

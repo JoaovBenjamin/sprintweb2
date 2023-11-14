@@ -6,7 +6,7 @@ function Footer(){
     return(
         <>
             <Rodape>
-                <LinkC href = "/cadastrar">Não tem cadastro ?</LinkC>
+                <LinkC>Não tem cadastro ?</LinkC>
                 <p>Direitos reservado</p>
             </Rodape>
         </>

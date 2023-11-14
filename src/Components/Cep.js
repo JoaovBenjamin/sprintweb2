@@ -71,7 +71,7 @@ function Cep() {
                             <Paragrafo>Bairro: {data.bairro}</Paragrafo>
                             <Paragrafo>UF: {data.uf}</Paragrafo>
                             <Paragrafo>DDD: {data.ddd}</Paragrafo>
-                            <ButtonLink><LinkC href="/Endereco">Continuar</LinkC></ButtonLink>
+                            <ButtonLink><LinkC href="/EncerrandoAtendimento">Continuar</LinkC></ButtonLink>
                     </InformacoesCep>
                 )
             }

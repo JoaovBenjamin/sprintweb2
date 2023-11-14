@@ -13,6 +13,7 @@ function Formulario(){
     const [clientes, setClientes] = useState([]);
     const [cpfPesquisa, setCpfPesquisa] = useState('');
     const [clienteEncontrado, setClienteEncontrado] = useState(null);
+    const [cpfInvalido, setCpfInvalido] = useState(false);
   
     useEffect(() => {
       const fetchData = async () => {
@@ -33,11 +34,16 @@ function Formulario(){
     
         // Realiza a pesquisa na lista de clientes pelo CPF
         const clientePesquisado = clientes.find((cliente) => cliente.cpf === cpfPesquisa);
-    
-        // Atualiza o estado com o cliente encontrado
-        setClienteEncontrado(clientePesquisado);
-    }
-  
+        if (clientePesquisado) {
+          setClienteEncontrado(clientePesquisado);
+          setCpfInvalido(false);
+          console.log('Cliente encontrado:', clientePesquisado);
+        } else {
+          setClienteEncontrado(null);
+          setCpfInvalido(true);
+          console.log('CPF inválido');
+        }
+      };
     return (
       <Section>
         <TituloD>Confirmação Identidade</TituloD>
@@ -52,6 +58,13 @@ function Formulario(){
           />
           <BtnAtendimento onClick={handlePesquisar}>Pesquisar</BtnAtendimento>
         </FormularioSection>
+
+        
+      {cpfInvalido && (
+        <SectionCepForm>
+          <Paragrafo>CPF inválido. Nenhum cliente encontrado.</Paragrafo>
+        </SectionCepForm>
+      )}
   
         {clienteEncontrado &&(
           <SectionCepForm>
